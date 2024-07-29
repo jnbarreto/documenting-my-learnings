@@ -1,4 +1,5 @@
 Pytest - commands
+Documentação pytest - https://docs.pytest.org/en/stable/index.html
 
 pytest: roda todos os testes
 pytest [name_archive_test]: roda o teste especifico
@@ -34,10 +35,18 @@ pytest -m "not [tag]": vai executar todos que não for desse grupo
 ## Marcadores defaults do pytest
 
 @mark.skip: Para pular um test
+ex: @mark.skip(reason="Pq ainda não implementei")
+
 @mark.skipif: Para pular um teste em deteminado contexto
+ex: @mark.skipif(sys.platform == "win32", reason="does not run on windows")
+
 @mark.xfail: É esperado que este teste falhe em algum contexto
-@mark.usefixture:
-@mark.parametrize:
+ex: @pytest.mark.xfail(reason="known parser issue")
+
+@mark.usefixture: É basicamente uma maneira de "entrar" em um contexto. ou prover uma ferramenta que precisa ser executada "antes" ou "depois" dos testes 
+
+@mark.parametrize: permite a parametrização de argumentos para uma função de teste
+ex: @pytest.mark.parametrize("entrada,esperado", [(1, 1), (2, 2), (3, "queijo"), (4, 4), (5, "goiabada")])
 
 
 
