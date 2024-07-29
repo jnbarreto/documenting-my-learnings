@@ -1,0 +1,46 @@
+CI/CD - Pipelines
+
+Github actions
+
+# Workflow 
+- São conjuntos de processos definidos por vc. EX: Fazer o Build + rodar os testes da aplicação
+- é possivel ter mais do que um workflow por repositório
+- Definidos em arquivos "yml" em: .github/workflows
+- Pode possuir um ou mais "Jobs"
+- É iniciado baseado em eventos do GitHub ou através de agendamento 
+
+##Evento
+on:push
+
+##filtros
+branches:
+    - master
+
+##Ambiente
+runs-on: ubuntu
+
+##Ações
+steps:
+    - uses: action/run-composer
+    - run: npm run prod
+    
+# Actions
+É a ação que de fato será executada em um dos Steps de um Job em um Workflow.
+Ela pode ser criada do zero ou ser reutilizada do actions pre-existentes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
