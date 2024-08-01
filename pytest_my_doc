@@ -26,9 +26,13 @@ pytest --junitxml report_1.xml
 # Mark tags ou grupos 
 
 from pytest import mark
-
-@mark.[tag]
-
+--------------------------------------------------------
+pyproject.toml adiciona as suas marks personalizadas:  -
+[tool.pytest.ini_options]                              -
+markers = [                                            -
+    "tag: marks tests as slow",                        -
+]                                                      -
+--------------------------------------------------------
 pytest -m [tag]: vai executar todos desse grupo
 pytest -m "not [tag]": vai executar todos que não for desse grupo
 
