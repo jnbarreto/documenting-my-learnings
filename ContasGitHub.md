@@ -49,17 +49,14 @@ mkdir personal work
 ```
 
 # CRIANDO AS CHAVES SSH
+```
 cd ~/.ssh
 ssh-keygen -f personal_id_rsa
 ssh-keygen -f work_id_rsa
-
+```
 # COPIE AS CHAVES SSH PARA SEUS RESPECTIVOS REPOSITORIOS
+```
 cd ~/.ssh
 cat personal_id_rsa.pub
 cat work_id_rsa.pub
-
-
-
-
-
-
+```
